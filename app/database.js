@@ -92,6 +92,7 @@ export const DatabaseProvider = ({ children }) => {
   const [db, setDb] = useState(null);
   const [poems, setPoems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedPoem, setSelectedPoem] = useState(1);
 
   // Initialize DB once
   useEffect(() => {
@@ -123,8 +124,10 @@ export const DatabaseProvider = ({ children }) => {
         db,
         poems,
         loading,
+        selectedPoem,
         reloadPoems,
         syncAndReload,
+        setSelectedPoem
       }}
     >
       {children}
